@@ -17,6 +17,10 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
         }
 
+        binding.button7.setOnClickListener {
+            startActivity(Intent(this, Post1Activity::class.java))
+        }
+
         binding.button8.setOnClickListener {
             startActivity(Intent(this, Payment1Activity::class.java))
         }
