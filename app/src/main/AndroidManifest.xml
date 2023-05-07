@@ -6,8 +6,8 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/letter_f_logo_design_template_on_transparent_background_png_removebg_preview"
+        android:label="FineX"
         android:supportsRtl="true"
         android:theme="@style/Theme.MADP"
         tools:targetApi="31">
