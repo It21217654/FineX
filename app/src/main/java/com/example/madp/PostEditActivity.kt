@@ -23,6 +23,7 @@ class PostEditActivity : AppCompatActivity() {
         val address = intent.getStringExtra("address")
         val category = intent.getStringExtra("category")
 
+        // Set the retrieved data to corresponding EditText fields
         binding.editTextTextPersonName2.setText(jobRole)
         binding.editTextTextPersonName4.setText(salary)
         binding.editTextTextPersonName.setText(company)
@@ -30,6 +31,7 @@ class PostEditActivity : AppCompatActivity() {
         binding.editTextTextPersonName10.setText(category)
 
         binding.button3.setOnClickListener {
+            // Retrieve the updated values from the EditText fields
             val updatedjobRole = binding.editTextTextPersonName2.text.toString()
             val updatedsalary = binding.editTextTextPersonName4.text.toString()
             val updatedcompany = binding.editTextTextPersonName.text.toString()
@@ -46,7 +48,7 @@ class PostEditActivity : AppCompatActivity() {
                 profileIntent.putExtra("category", updatedcategory)
                 startActivity(profileIntent)
 
-                Toast.makeText(this, "Job ad updated successfully !", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Job ad updated successfully !", Toast.LENGTH_SHORT).show() // Display a toast message to indicate successful update
             }
         }
     }
