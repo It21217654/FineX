@@ -21,6 +21,7 @@ class EditPaymentActivity : AppCompatActivity() {
         val total = intent.getStringExtra("total")
         val ads = intent.getStringExtra("ads")
 
+        // Set the retrieved data to corresponding EditText fields
         binding.editTextTextPersonName7.setText(pmethod)
         binding.editTextTextPersonName9.setText(ads)
 
@@ -35,17 +36,19 @@ class EditPaymentActivity : AppCompatActivity() {
 
                 if (updatedads != null) {
                     val sum = (num1*updatedads) + num2
+
+                    // Create a new intent to pass the updated data to the Payment2Activity
                     val profileIntent = Intent(this, Payment2Activity::class.java)
                     profileIntent.putExtra("pmethod", updatedpmethod)
                     profileIntent.putExtra("total", sum.toString())
                     profileIntent.putExtra("ads", updatedads.toString())
                     startActivity(profileIntent)
                 } else {
-                    Toast.makeText(this, "Please enter a valid number !", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Please enter a valid number !", Toast.LENGTH_SHORT).show() // Toast message to enter a valid number
                 }
-                Toast.makeText(this, "Your details updated successfully !", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Your details updated successfully !", Toast.LENGTH_SHORT).show() // Toast message for successful update
             } else {
-                Toast.makeText(this, "Empty Fields Are not Allowed !", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Empty Fields Are not Allowed !", Toast.LENGTH_SHORT).show() // Toast message saying that empty fields are not allowed
             }
         }
     }
