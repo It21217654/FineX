@@ -30,6 +30,7 @@ class Post2Activity : AppCompatActivity() {
         binding.editTextTextPersonName11.text = category
 
         binding.button.setOnClickListener {
+            // Proceed to the next activity and pass the data to it
             val intent = Intent(this, Post3Activity::class.java)
             intent.putExtra("jobRole", jobRole)
             intent.putExtra("salary", salary)
@@ -38,7 +39,7 @@ class Post2Activity : AppCompatActivity() {
             intent.putExtra("category", category)
             startActivity(intent)
 
-            Toast.makeText(this, "Job ad posted successfully !", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Job ad posted successfully !", Toast.LENGTH_SHORT).show() // Display a toast message to indicate successful job ad posting
         }
     }
 }
