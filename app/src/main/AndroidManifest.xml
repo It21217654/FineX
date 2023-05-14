@@ -12,6 +12,8 @@
         android:theme="@style/Theme.MADP"
         tools:targetApi="31">
 
+        <!-- activities -->
+
         <activity
             android:name=".Post1Activity"
             android:exported="false" />
@@ -80,13 +82,14 @@
             android:name=".ProfileActivity"
             android:exported="false" />
 
+        <!-- main activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" /> <!-- main entry point -->
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" /> <!-- this activity displayed in launcher -->
             </intent-filter>
         </activity>
 
