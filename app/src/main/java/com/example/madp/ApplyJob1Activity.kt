@@ -13,11 +13,13 @@ class ApplyJob1Activity : AppCompatActivity() {
         binding = ActivityApplyJob1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Set click listener for button4
         binding.button4.setOnClickListener {
-            startActivity(Intent(this, ApplyJob2Activity::class.java))
+            startActivity(Intent(this, ApplyJob2Activity::class.java)) // Start ApplyJob2Activity when button4 is clicked
         }
+        // Set click listener for button5
         binding.button5.setOnClickListener {
-            startActivity(Intent(this, ApplyJob2Activity::class.java))
+            startActivity(Intent(this, ApplyJob2Activity::class.java)) // Start ApplyJob2Activity when button5 is clicked
         }
     }
 }
