@@ -22,10 +22,12 @@ class ApplyJobEditActivity : AppCompatActivity() {
         val contact = intent.getStringExtra("contact")
         val cv = intent.getStringExtra("cv")
 
+        // Set the retrieved data to corresponding EditText fields
         binding.editTextTextPersonName16.setText(name)
         binding.editTextTextPersonName17.setText(email)
         binding.editTextTextPersonName18.setText(contact)
 
+        // Set click listener for button14
         binding.button14.setOnClickListener {
             val updatedname = binding.editTextTextPersonName16.text.toString()
             val updatedemail = binding.editTextTextPersonName17.text.toString()
@@ -38,11 +40,11 @@ class ApplyJobEditActivity : AppCompatActivity() {
                 profileIntent.putExtra("email", updatedemail)
                 profileIntent.putExtra("contact", updatedcontact)
                 profileIntent.putExtra("cv", cv)
-                startActivity(profileIntent)
+                startActivity(profileIntent) // Start ApplyJob3Activity with the updated data
 
-                Toast.makeText(this, "Your details updated successfully !", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Your details updated successfully !", Toast.LENGTH_SHORT).show() // Show a toast message indicating successful update
             } else {
-                Toast.makeText(this, "Empty Fields Are not Allowed !", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Empty Fields Are not Allowed !", Toast.LENGTH_SHORT).show() // Show a toast message indicating that empty fields are not allowed
             }
         }
     }
