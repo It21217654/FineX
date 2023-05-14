@@ -17,6 +17,7 @@ class Post1Activity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button3.setOnClickListener {
+            // Retrieve input values from the text fields
             val jobRole = binding.editTextTextPersonName2.text.toString()
             val salary = binding.editTextTextPersonName4.text.toString()
             val company = binding.editTextTextPersonName.text.toString()
@@ -24,6 +25,7 @@ class Post1Activity : AppCompatActivity() {
             val category = binding.editTextTextPersonName10.text.toString()
 
             if (jobRole.isNotEmpty() && salary.isNotEmpty() && company.isNotEmpty() && address.isNotEmpty() && category.isNotEmpty()){
+                // Proceed to the next activity if all fields are filled
                 val intent = Intent(this, Post2Activity::class.java)
                 intent.putExtra("jobRole", jobRole)
                 intent.putExtra("salary", salary)
@@ -33,7 +35,7 @@ class Post1Activity : AppCompatActivity() {
                 startActivity(intent)
             }
             else {
-                Toast.makeText(this, "Empty Fields Are not Allowed !", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Empty Fields Are not Allowed !", Toast.LENGTH_SHORT).show() // Display a toast message if any field is empty
             }
         }
     }
