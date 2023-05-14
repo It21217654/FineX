@@ -23,6 +23,7 @@ class EditActivity : AppCompatActivity() {
         val age = intent.getStringExtra("age")
         val gender = intent.getStringExtra("gender")
 
+        // Set the retrieved data to corresponding EditText and TextView fields
         binding.editTextTextPersonName5.setText(fullName)
         binding.editTextTextPersonName7.text = email
         binding.editTextTextPersonName9.setText(address)
@@ -43,9 +44,9 @@ class EditActivity : AppCompatActivity() {
                 profileIntent.putExtra("address", updatedAddress)
                 profileIntent.putExtra("age", updatedAge)
                 profileIntent.putExtra("gender", updatedGender)
-                startActivity(profileIntent)
+                startActivity(profileIntent) // Start ProfileActivity with the updated data
 
-                Toast.makeText(this, "Profile updated successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Profile updated successfully", Toast.LENGTH_SHORT).show() // Show a toast message indicating successful update
             }
         }
     }
