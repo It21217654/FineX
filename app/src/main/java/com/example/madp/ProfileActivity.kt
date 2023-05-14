@@ -37,7 +37,7 @@ class ProfileActivity : AppCompatActivity() {
 
         binding.button6.setOnClickListener {
             mAuth.signOut()
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java)) // Sign out the user and navigate to the LoginActivity
             finish()
         }
 
@@ -48,7 +48,7 @@ class ProfileActivity : AppCompatActivity() {
             intent.putExtra("address", address)
             intent.putExtra("age", age)
             intent.putExtra("gender", gender)
-            startActivity(intent)
+            startActivity(intent) // Navigate to the EditActivity to edit user profile
         }
 
         binding.button5.setOnClickListener {
@@ -60,15 +60,15 @@ class ProfileActivity : AppCompatActivity() {
                     val databaseRef = FirebaseDatabase.getInstance().getReference("Users")
                     databaseRef.child(user.uid).removeValue().addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            Toast.makeText(this, "User account deleted successfully !", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "User account deleted successfully !", Toast.LENGTH_SHORT).show() // Toast message to display the user account deleted
                             startActivity(Intent(this, MainActivity::class.java))
                             finish()
                         } else {
-                            Toast.makeText(this, "Failed to delete user data !", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Failed to delete user data !", Toast.LENGTH_SHORT).show() // Toast message to display fail to delete the user data
                         }
                     }
                 } else {
-                    Toast.makeText(this, "Failed to delete user account !", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Failed to delete user account !", Toast.LENGTH_SHORT).show() // Toast message to display fail to delete the user account
                 }
             }
         }
