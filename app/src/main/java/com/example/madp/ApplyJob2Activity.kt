@@ -19,16 +19,18 @@ class ApplyJob2Activity : AppCompatActivity() {
         binding = ActivityApplyJob2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Set click listener for button16
         binding.button16.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
-            startActivityForResult(intent, PICK_IMAGE_REQUEST)
+            startActivityForResult(intent, PICK_IMAGE_REQUEST) // Start activity to pick an image
         }
 
+        // Set click listener for button12
         binding.button12.setOnClickListener {
-            binding.imageView.setImageURI(null)
-            binding.editTextTextPersonName15.text = "No file chosen"
-            selectedImageUri = Uri.EMPTY
+            binding.imageView.setImageURI(null) // Clear the image view
+            binding.editTextTextPersonName15.text = "No file chosen" // Set the text to indicate no file is chosen
+            selectedImageUri = Uri.EMPTY // Set the selected image URI to empty
         }
     }
 
@@ -36,10 +38,11 @@ class ApplyJob2Activity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.data != null) {
             selectedImageUri = data.data!!
-            binding.imageView.setImageURI(selectedImageUri)
-            binding.editTextTextPersonName15.text = selectedImageUri.toString()
+            binding.imageView.setImageURI(selectedImageUri) // Set the selected image to the image view
+            binding.editTextTextPersonName15.text = selectedImageUri.toString() // Set the text to display the selected image URI
         }
 
+        // Set click listener for button14
         binding.button14.setOnClickListener {
             val name = binding.editTextTextPersonName16.text.toString()
             val email = binding.editTextTextPersonName17.text.toString()
@@ -54,9 +57,9 @@ class ApplyJob2Activity : AppCompatActivity() {
                 intent.putExtra("cv", cv)
 
                 if (selectedImageUri != Uri.EMPTY) {
-                    startActivity(intent)
+                    startActivity(intent) // Start ApplyJob3Activity with the provided data
                 } else {
-                    Toast.makeText(this, "Upload the CV !", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Upload the CV !", Toast.LENGTH_SHORT).show() // Show a toast message if no CV is uploaded
                 }
             }
         }
