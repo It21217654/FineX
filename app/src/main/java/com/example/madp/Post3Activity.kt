@@ -30,6 +30,7 @@ class Post3Activity : AppCompatActivity() {
         binding.textView14.text = category
 
         binding.button3.setOnClickListener {
+            // Proceed to the edit activity and pass the data to it
             val intent = Intent(this, PostEditActivity::class.java)
             intent.putExtra("jobRole", jobRole)
             intent.putExtra("salary", salary)
@@ -50,15 +51,15 @@ class Post3Activity : AppCompatActivity() {
             editor.remove("category")
             editor.apply()
 
-            Toast.makeText(this, "Job ad deleted successfully !", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Job ad deleted successfully !", Toast.LENGTH_SHORT).show() // Display a toast message to indicate successful deletion
 
             // finish the activity and go back to the previous one
             finish()
-            startActivity(Intent(this, Post3Activity::class.java))
+            startActivity(Intent(this, Post3Activity::class.java)) // Finish the activity and go back to the previous one
         }
 
         binding.button4.setOnClickListener {
-            startActivity(Intent(this, DashboardActivity::class.java))
+            startActivity(Intent(this, DashboardActivity::class.java)) // Go back to the dashboard activity
         }
     }
 }
